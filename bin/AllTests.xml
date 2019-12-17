@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="AllTests" verbose="10">
+
+	<listeners>
+		<listener
+			class-name="site.ecommerce.breville.base.CustomReporter" />
+	</listeners>
+
+	<test name="PositiveTests">
+		<classes>
+			<class name="site.ecommerce.breville.PlaceOrders">
+				<methods>
+					<include name="placePositiveOrdersTests"></include>
+				</methods>
+			</class>
+		</classes>
+
+	</test>
+
+	<test name="NegativeTests">
+		<parameter name="productNumber" value="qwerty12345"></parameter>
+		<classes>
+			<class name="site.ecommerce.breville.PlaceOrders">
+				<methods>
+					<include name="placeNegativeOrdersTests"></include>
+				</methods>
+			</class>
+		</classes>
+
+	</test>
+
+</suite>

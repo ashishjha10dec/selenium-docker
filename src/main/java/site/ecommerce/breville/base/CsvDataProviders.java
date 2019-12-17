@@ -24,12 +24,10 @@ public class CsvDataProviders {
 		List<Object[]> list = new ArrayList<Object[]>();
 		
 		if (System.getProperty("FILENAME") != null) {
-			String file01 = System.getProperty("FILENAME");
-			file = file01;
-			
+			file = System.getProperty("FILENAME");
 		}
 
-		String f = file;
+		String f = System.getProperty("user.dir") + "//" + file;
 		File file = new File(f);
 		try {
 			CSVReader reader = new CSVReader(new FileReader(file));
